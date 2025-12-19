@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visitor System | Login</title>
+
+  <link rel="stylesheet" href="./css/app.css" />
+</head>
+<body class="login-page">
+
+  <main class="login-container">
+    <h1>Visitor System</h1>
+    <p class="subtitle">เข้าสู่ระบบเจ้าหน้าที่</p>
+
+    <form id="loginForm">
+      <label>
+        <span>User ID</span>
+        <input type="text" id="userId" required autocomplete="username" />
+      </label>
+
+      <label>
+        <span>PIN</span>
+        <input type="password" id="pin" required autocomplete="current-password" />
+      </label>
+
+      <button type="submit">เข้าสู่ระบบ</button>
+    </form>
+
+    <p id="errorMsg" class="error hidden"></p>
+  </main>
+
+  <script src="./js/utils.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+</html>

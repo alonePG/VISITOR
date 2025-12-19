@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guard | Visitor System</title>
+
+  <link rel="stylesheet" href="./css/app.css" />
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <h2>Guard Console</h2>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main class="container" id="app">
+
+    <!-- =====================
+         Create Visit
+    ====================== -->
+    <section class="card">
+      <h3>สร้างรายการผู้มาติดต่อ</h3>
+
+      <form id="createVisitForm">
+        <label>
+          <span>ประเภทผู้มาติดต่อ</span>
+          <select id="visitorType" required>
+            <option value="">-- เลือกประเภท --</option>
+            <option value="GUEST">GUEST</option>
+            <option value="TECH">TECH</option>
+            <option value="DELIVERY">DELIVERY</option>
+            <option value="OTHER">OTHER</option>
+          </select>
+        </label>
+
+        <label>
+          <span>ยูนิต / ห้อง</span>
+          <input type="text" id="unitCode" placeholder="เช่น A-101" required />
+        </label>
+
+        <label>
+          <span>ทะเบียนรถ / หมายเหตุ</span>
+          <input type="text" id="plateOrNote" placeholder="ไม่บังคับ" />
+        </label>
+
+        <button type="submit">สร้าง Visit</button>
+      </form>
+    </section>
+
+    <!-- =====================
+         IN / OUT
+    ====================== -->
+    <section class="card">
+      <h3>บันทึกเข้า / ออก</h3>
+
+      <label>
+        <span>Visit ID</span>
+        <input type="text" id="visitIdAction" placeholder="เช่น V20240101123005-1234" />
+      </label>
+
+      <div class="action-row">
+        <button id="inBtn">IN</button>
+        <button id="outBtn">OUT</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="./js/utils.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/guard.js"></script>
+
+</body>
+</html>

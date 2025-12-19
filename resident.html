@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resident | Visitor System</title>
+
+  <link rel="stylesheet" href="./css/app.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <h2>Resident Console</h2>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <main class="container">
+
+    <!-- Pending Visitors -->
+    <section class="card">
+      <h3>ผู้มาติดต่อรออนุมัติ</h3>
+      <div id="pendingList">
+        <!-- resident.js จะ render list ที่นี่ -->
+        <p class="muted">ไม่มีรายการ</p>
+      </div>
+    </section>
+
+    <!-- Create Pass -->
+    <section class="card">
+      <h3>สร้าง Visitor Pass</h3>
+
+      <form id="createPassForm">
+        <label>
+          <span>ประเภทผู้มาติดต่อ</span>
+          <select id="passVisitorType" required>
+            <!-- policy visitor_type -->
+          </select>
+        </label>
+
+        <label>
+          <span>หมายเหตุ</span>
+          <input type="text" id="passNote" placeholder="เช่น ช่างแอร์" />
+        </label>
+
+        <label>
+          <span>จำนวนครั้งที่ใช้ได้</span>
+          <input type="number" id="passMaxUses" value="1" min="1" />
+        </label>
+
+        <button type="submit">สร้าง Pass</button>
+      </form>
+
+      <div id="passResult" class="hidden">
+        <!-- QR / token จะแสดงที่นี่ -->
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./js/utils.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/resident.js"></script>
+</body>
+</html>
